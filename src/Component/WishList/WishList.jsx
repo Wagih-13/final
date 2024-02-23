@@ -5,9 +5,8 @@ import { CartContext } from "../../Context/CartContext";
 import toast, { Toaster } from "react-hot-toast";
 
 export default function WishList() {
-  let { getWishList, addToWishList, clearWishList } =
-    useContext(WishListContext);
-  let { addCart } = useContext(CartContext);
+  let { getWishList, clearWishList } = useContext(WishListContext);
+  let { addCart, setItemNum } = useContext(CartContext);
   let [myData, setMyData] = useState(null);
   let [loding, setLoding] = useState(false);
 
@@ -21,7 +20,7 @@ export default function WishList() {
   }
 
   async function clearItem(id) {
-    let req = await clearWishList(id);
+    let req = await clearWishList(id).catch(() => {});
     if (req?.data.status === "success") {
       getAllWishList();
     }
@@ -35,7 +34,9 @@ export default function WishList() {
     let req = await addCart(id).catch((err) => {
       toast.error("This didn't work.");
     });
-
+    if (req?.data.status === "success") {
+      setItemNum(req.data.numOfCartItems);
+    }
     toast.success("Successfully added!");
   }
 

@@ -65,7 +65,7 @@ export default function Home() {
                   <>
                     <div className="card position-relative">
                       <i
-                        class="fa-regular fa-heart fa-xl z-3 position-absolute top-0 end-0 p-3 mt-2"
+                        class="fa-regular fa-heart fa-xl z-3 position-absolute top-0 end-0 p-3 mt-2 text-dark"
                         onClick={(inf) => {
                           switche(inf, el.id);
                         }}

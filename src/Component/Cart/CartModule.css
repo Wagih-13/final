@@ -1,0 +1,40 @@
+.myContainer > .row:not(:last-child) {
+  border-bottom: 1px solid rgb(170, 170, 170);
+  padding: 20px;
+}
+
+.myContainer .clearCart {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.myContainer .row .col-md-10 .info {
+  flex-basis: 75%;
+}
+
+@media (max-width: 767px) {
+  .myContainer .row img {
+    width: 100px !important;
+  }
+
+  .myContainer .mainRow {
+    flex-direction: row;
+  }
+
+  .myContainer .row .col-md-2 {
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .myContainer .row .col-md-10 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .myContainer .row .col-md-10 .info {
+    align-self: flex-start;
+  }
+  .myContainer .row .col-md-10 .update {
+    align-self: flex-end;
+  }
+}

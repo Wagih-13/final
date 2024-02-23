@@ -1,0 +1,12 @@
+@media (max-width: 767px) {
+  .owl-theme .item img {
+    height: 250px !important;
+  }
+  .owl-dots {
+    display: none !important;
+  }
+  .col-md-3 img {
+    height: 125px !important;
+    width: 50% !important;
+  }
+}
